@@ -1,0 +1,130 @@
+{
+  "os": "Linux-5.4.0-169-generic-x86_64-with-glibc2.31",
+  "python": "CPython 3.11.14",
+  "startedAt": "2025-11-13T01:46:20.692011Z",
+  "args": [
+    "--output_dir",
+    "./outputs/test_humanomni_emer_1format_withpath_withchoice/",
+    "--model_name_or_path",
+    "/data1/models/EMER-SFT-0.5B",
+    "--json_dataset_path",
+    "/data1/xiangc/mxy/R1-Omni/DFEW/dfew_train_fold1.json",
+    "--data_folder",
+    "/data1/xiangc/mxy/R1-Omni",
+    "--deepspeed",
+    "local_scripts/zero3.json",
+    "--max_prompt_length",
+    "512",
+    "--max_completion_length",
+    "512",
+    "--per_device_train_batch_size",
+    "1",
+    "--gradient_accumulation_steps",
+    "2",
+    "--logging_steps",
+    "1",
+    "--bf16",
+    "--report_to",
+    "wandb",
+    "--gradient_checkpointing",
+    "false",
+    "--attn_implementation",
+    "flash_attention_2",
+    "--max_pixels",
+    "401408",
+    "--num_train_epochs",
+    "2",
+    "--run_name",
+    "Qwen2-VL-2B-GRPO-emotion",
+    "--save_steps",
+    "1000",
+    "--save_only_model",
+    "true",
+    "--num_generations",
+    "8"
+  ],
+  "program": "/data1/xiangc/mxy/R1-Omni/src/r1-v/src/open_r1/grpo.py",
+  "codePath": "src/r1-v/src/open_r1/grpo.py",
+  "codePathLocal": "src/open_r1/grpo.py",
+  "git": {
+    "remote": "https://github.com/HumanMLLM/R1-Omni.git",
+    "commit": "17cafcae0b0a1c454896f4eb7a1c006bf13e1f4d"
+  },
+  "email": "jackmfn6@gmail.com",
+  "root": "/data1/xiangc/mxy/R1-Omni/src/r1-v",
+  "host": "node64",
+  "executable": "/home/xiangchao/miniconda3/envs/r1-v/bin/python3.11",
+  "cpu_count": 76,
+  "cpu_count_logical": 152,
+  "gpu": "NVIDIA A800-SXM4-40GB",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "1138134876160",
+      "used": "1072609218560"
+    }
+  },
+  "memory": {
+    "total": "2163588001792"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-d64fd549-cf0b-b233-b7a0-f1be2c5ec610"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-6442a8b4-8374-9bec-e924-d605cdb44ae6"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-1c03c96e-4c27-410c-4500-958d7cb5176c"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-2d5c214c-cdd8-e612-fa88-d85489bae200"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-a98d0e09-83bb-554c-67d1-1ff9bef2bcb7"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-00bec891-dea5-4f08-5330-e01173afb30f"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-ea26992e-a9db-366b-1262-20b41caad35e"
+    },
+    {
+      "name": "NVIDIA A800-SXM4-40GB",
+      "memoryTotal": "42949672960",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-9232f6ed-6ed9-c723-cc4a-6dea8105b023"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "92mbuz3wt065lxjt7zlcqoopj2uqlpgk"
+}

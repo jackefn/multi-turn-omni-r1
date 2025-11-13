@@ -1,0 +1,16 @@
+{"time":"2025-11-13T09:46:20.941913842+08:00","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-11-13T09:46:21.576885636+08:00","level":"INFO","msg":"stream: created new stream","id":"z0suf65p"}
+{"time":"2025-11-13T09:46:21.576996313+08:00","level":"INFO","msg":"handler: started","stream_id":"z0suf65p"}
+{"time":"2025-11-13T09:46:21.577139433+08:00","level":"INFO","msg":"stream: started","id":"z0suf65p"}
+{"time":"2025-11-13T09:46:21.577173573+08:00","level":"INFO","msg":"sender: started","stream_id":"z0suf65p"}
+{"time":"2025-11-13T09:46:21.577177952+08:00","level":"INFO","msg":"writer: started","stream_id":"z0suf65p"}
+{"time":"2025-11-13T09:48:57.531516807+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackmfn6-beijing-information-science-and-technology-univ/huggingface/z0suf65p/file_stream\": read tcp 127.0.0.1:37504->127.0.0.1:7890: read: connection reset by peer"}
+{"time":"2025-11-13T09:49:04.762195908+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackmfn6-beijing-information-science-and-technology-univ/huggingface/z0suf65p/file_stream\": read tcp 127.0.0.1:40772->127.0.0.1:7890: read: connection reset by peer"}
+{"time":"2025-11-13T09:49:14.554521182+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackmfn6-beijing-information-science-and-technology-univ/huggingface/z0suf65p/file_stream\": read tcp 127.0.0.1:46166->127.0.0.1:7890: read: connection reset by peer"}
+{"time":"2025-11-13T09:49:22.195936225+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-11-13T09:49:26.262702243+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": unexpected EOF"}
+{"time":"2025-11-13T09:49:28.653413941+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackmfn6-beijing-information-science-and-technology-univ/huggingface/z0suf65p/file_stream\": read tcp 127.0.0.1:57480->127.0.0.1:7890: read: connection reset by peer"}
+{"time":"2025-11-13T09:49:30.079751785+08:00","level":"INFO","msg":"flowcontrol: backed up, offloading to disk","recordNumber":192}
+{"time":"2025-11-13T09:49:36.00293311+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 127.0.0.1:53760->127.0.0.1:7890: read: connection reset by peer"}
+{"time":"2025-11-13T09:49:49.703207669+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 127.0.0.1:59696->127.0.0.1:7890: read: connection reset by peer"}
+{"time":"2025-11-13T09:50:07.127953617+08:00","level":"INFO","msg":"flowcontrol: unblocked","totalOffloaded":26}
