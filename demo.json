@@ -1,0 +1,20 @@
+{
+  "id": 1726,
+  "instruction": "You are performing an Audio/Video Question Answering (Audio/Video QA) task. Given a video and an English question, you should first perform the necessary retrieval (retrieve relevant images/key frames from the video) and then answer the question. Your output must strictly contain three fields wrapped with the following tags: <think></think> for your reasoning process; <search></search> for a natural-language retrieval query (used to retrieve matching images from the video frame database); <answer></answer> for the final answer (output only the English word corresponding to the correct option).",
+  "videos": [
+    "/mnt/hpfs/xiangc/mxy/multi-turn-omni-r1/data/AVQA/AVQA/AVQA_dataset/raw_videos/0UEClS6XhZ0_downsample.mp4"
+  ],
+  "reward_model_ground_truth": {
+    "answer_index": 3,
+    "answer_text": "dog",
+    "multi_choice": ["5", "6", "7", "8"]
+  },
+  "extra_info": {
+    "video_name": "0UEClS6XhZ0",
+    "video_id": 1819,
+    "question": "How much people are shown in the video? What are they doing?",
+    "answer": "8",
+    "question_relation": "Both",
+    "question_type": "Which"
+  }
+}
