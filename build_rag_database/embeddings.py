@@ -4,7 +4,7 @@ from PIL import Image
 import faiss
 import numpy as np
 import json
-from build_rag_database.video_ingest import audio_to_text, extract_frames, video_to_audio
+from video_ingest import audio_to_text, extract_frames, video_to_audio, extract_segments
 import os
 import re
 
@@ -93,13 +93,71 @@ def ingest_video(video_path, frame_dir, audio_path, index_path, meta_path):
 
     print(f"Ingest finished: {len(sentences)} ASR sentences + {len(os.listdir(frame_dir))} frames processed.")
 
+def ingest_video_segments(
+    video_path,
+    out_dir,
+    index_path,
+    meta_path,
+    interval_sec=3.0,
+    audio_win_sec=2.0,
+):
+    seg_meta_path = extract_segments(
+        video_path=video_path,
+        out_dir=out_dir,
+        interval_sec=interval_sec,
+        audio_win_sec=audio_win_sec,
+    )
+    with open(seg_meta_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            seg = json.loads(line)
+            frame_rel = seg["frame_relpath"]
+            audio_rel = seg["audio_relpath"]
+            frame_abs = os.path.join(out_dir, frame_rel)
+            img_vec = embed_image(frame_abs)
+            add_to_index(index_path, img_vec)
+
+            add_metadata(
+                meta_path,
+                {
+                    "type": "frame",
+                    "modality": "image",
+                    "segment_id": seg["segment_id"],
+                    "t": seg["t"],
+                    "t0": seg["t0"],
+                    "t1": seg["t1"],
+                    "frame": frame_rel,
+                    "audio": audio_rel,
+                },
+            )
+
 if not os.path.exists("rag_db"):
     os.makedirs("rag_db")
 
-# create_index(512, "rag_db/video_index.faiss")
-# ingest_video(video_path="ZXoaMa6jlO4.mp4",
-#              frame_dir="frames",
-#              audio_path="output_audio.wav",
-#              index_path="rag_db/video_index.faiss",
-#              meta_path="rag_db/video_metadata.jsonl")
+if __name__ == "__main__":
+    import os
 
+    os.makedirs("rag_db", exist_ok=True)
+
+    INDEX_PATH = "rag_db/video_index.faiss"
+    META_PATH  = "rag_db/video_metadata.jsonl"
+
+    if os.path.exists(INDEX_PATH):
+        os.remove(INDEX_PATH)
+    if os.path.exists(META_PATH):
+        os.remove(META_PATH)
+
+    create_index(512, INDEX_PATH)
+
+    ingest_video_segments(
+        video_path="video_1.mp4",
+        out_dir="dataset/video_1",   
+        index_path=INDEX_PATH,
+        meta_path=META_PATH,
+        interval_sec=3.0,            # 每隔 3 秒取一段（可改 2/5）
+        audio_win_sec=2.0,           # 每段配 2 秒音频（可改 3/4）
+    )
+
+    print("Ingest segments done.")
